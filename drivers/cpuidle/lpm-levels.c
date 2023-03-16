@@ -739,7 +739,7 @@ static int cpu_power_select(struct cpuidle_device *dev,
 					&idx_restrict, &idx_restrict_time,
 					&ipi_predicted);
 				if (predicted && (predicted < min_residency))
-					predicted = min_residency;
+					predicted = (uint64_t)min_residency;
 			} else
 				invalidate_predict_history(dev);
 		}
